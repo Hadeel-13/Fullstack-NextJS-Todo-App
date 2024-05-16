@@ -27,7 +27,7 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <ClerkProvider>
+        <ClerkProvider signInUrl="/" signUpUrl="/">
             <html lang="en">
                 <body className={inter.className}>
                     <ThemeProvider
@@ -41,7 +41,7 @@ export default function RootLayout({
                             {children}
                         </div>
                         <SignedOut>
-                            <RedirectToSignIn  />
+                            <RedirectToSignIn redirectUrl={"/sign in"} />
                         </SignedOut>
                     </ThemeProvider>
                 </body>
